@@ -11,7 +11,65 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="text-6xl bg-red-600">HEllo Boy</h1>
+    <main class="grid grid-cols-1 md:grid-cols-2">
+        <!-- Product Image -->
+        <section>
+            <div class=" text-center mx-auto flex justify-center items-center">
+                <img src="images/mac.png" alt="" class="w-3/4">
+            </div>
+        </section>
+        <!-- Product Details and Customize Section -->
+        <section>
+            <div>
+                <h1 class="text-5xl font-semibold">Customize Your Blue 24-Inch iMac  with Apple M1 Chip.</h1>
+                <h3 class="text-md font-normal mt-4"> Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports Magic Mouse Magic Keyboard - US English</h3>
+            </div>
+            <div id="memory">
+                <h1 class="text-lg font-semibold my-4">Memory</h1>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="memory-8gb">8GB unified memory</button>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="memory-16gb">16GB unified memory</button>
+            </div>
+            <div id="storage">
+                <h1 class="text-lg font-semibold my-4">storage</h1>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="SSD-256GB">256GB SSD Storage</button>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="SSD-512GB">512GB SSD Storage</button>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="SSD-1TB">1TB SSD Storage</button>
+            </div>
+            <div id="devilary-option">
+                <h1 class="text-lg font-semibold my-4">Chose your Delivery Option</h1>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="free-delivary">Free Delivary in 7-15 Days</button>
+                <button class="bg-gray-200 px-4 py-2 rounded-lg focus:ring-2 focus:ring-black-500" id="paid-delivary" >Rocket Delivery in 1-2 days</button>    
+            </div>
+
+            <!-- Price Calculation -->
+            <div class="my-8 ">
+                <h1 class="text-lg font-semibold my-4" >Base Price :$<span>1299</span> </h1>
+                <hr class="w-2/4">
+                <h1 class="text-lg font-semibold my-4" >Extra Memory Cost :$<span id="memory-cost">0</span> </h1>
+                <hr class="w-2/4">
+                <h1 class="text-lg font-semibold my-4" >Extra Storage Cost :$<span id="storage-cost" >0</span> </h1>
+                <hr class="w-2/4">
+                <h1 class="text-lg font-semibold my-4" >Delivery Charge :$<span id="Delivary-cost" >0</span> </h1>
+                <hr class="w-2/4 h-0.5 bg-black">
+                <h1 class="text-lg font-semibold my-4" >Total Price :$<span id="total-price" >1299</span> </h1>
+                <hr class="w-2/4">
+                <!-- Promo Code Option -->
+                <div class="my-4">
+                <h3 class="text-md font-semibold">Add Promo Code</h3>
+                <input type="text" name="" id="" placeholder="promocode here" class=" border-2 border-gray-400 px-6 py-3 rounded"> 
+                <button class="px-6 py-3 bg-red-400 rounded hover:bg-red-600">Apply</button>
+                </div>    
+            </div>
+        </section>
+        
+    </main>
+    <!-- Footer -->
+    <section class="flex flex-col justify-center items-center">
+        <!-- Total after add promocode -->
+            <hr class="w-3/4 h-0.5 bg-black">
+             <h1 class="text-5xl font-bold text-center">Total :$<span>1299</span> </h1>
+        
+    </section>
     <!-- JS Link -->
     <script src="main.js"></script>
 </body>
