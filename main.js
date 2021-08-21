@@ -66,21 +66,23 @@ document.getElementById('devilary-option').addEventListener('click', function (e
     GrantTotal.innerText = TotalValue.innerText;
 })
 
-//     const StorageCost = document.getElementById('storage-cost').innerText;
-//     const MemoryCost = document.getElementById('memory-cost').innerText;
-//     const DeliveryCost = document.getElementById('Delivary-cost').innerText;
-
-// document.getElementById('hudai').addEventListener('click', function () {
-//     function Total() {
-//         let sum = parseInt(basepriceValue)  + parseInt(MemoryCost) + parseInt(StorageCost) + parseInt(DeliveryCost);
-//         return sum
-//     }
-
-//     TotalValue.innerText = Total()
-// })
-
 
 // Coupon Code Option
+const PromoField = document.getElementById('promo');
+const ApplyPromo = document.getElementById('promo-apply');
 
+ApplyPromo.addEventListener('click', function () {
+    if (PromoField.value == "asdf") {
+        GrantTotal.innerText = parseInt(GrantTotal.innerText) - parseInt(GrantTotal.innerText) * .2;
+        PromoField.value = "";
+        ApplyPromo.style.display = 'none'
+        PromoField.style.display = "none"
+        document.getElementById('confirm-msg').style.display ='block'
 
+    }
+    else {
+        ApplyPromo.removeAttribute('disabled');
+    }
+    
+})
     
