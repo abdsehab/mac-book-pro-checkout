@@ -72,7 +72,7 @@ const PromoField = document.getElementById('promo');
 const ApplyPromo = document.getElementById('promo-apply');
 
 ApplyPromo.addEventListener('click', function () {
-    if (PromoField.value == "asdf") {
+    if (PromoField.value == 'stevekaku') {
         GrantTotal.innerText = parseInt(GrantTotal.innerText) - parseInt(GrantTotal.innerText) * .2;
         PromoField.value = "";
         ApplyPromo.style.display = 'none'
@@ -81,7 +81,7 @@ ApplyPromo.addEventListener('click', function () {
 
     }
     else {
-        ApplyPromo.removeAttribute('disabled');
+        PromoField.value = " Check Again";
     }
     
 })
