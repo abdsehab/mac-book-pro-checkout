@@ -12,60 +12,43 @@ function CostAdd(option1,option2,ItemCost, Price,Option3){
         ExtraCost.innerText = Price;  
     }
     else {
-        ExtraCost.innerText = Price * 2; 
+        ExtraCost.innerText = (Price * 2) -20; 
     }
 }
 
+// Memory 
+document.getElementById('memory').addEventListener('click', function (event) { 
+    CostAdd('memory-8gb', 'memory-16gb', 'memory-cost', 180)
+
+})
+// Storage 
+document.getElementById('storage').addEventListener('click', function (event) {
+    CostAdd('SSD-256GB','SSD-512GB','storage-cost',100,'SSD-1TB')
+    
+})
+// Delivery
+document.getElementById('devilary-option').addEventListener('click', function (event) {
+    CostAdd('free-delivary', 'paid-delivary', 'Delivary-cost', 20)
+    
+})
+
+// Total Update
 const baseprice = document.getElementById('base-price');
 const basepriceValue = baseprice.innerText;
 const TotalValue = document.getElementById('total-price');
+
+document.getElementById('selection-parents').addEventListener('click', function () {
+    const StorageCost = document.getElementById('storage-cost');
+    const MemoryCost = document.getElementById('memory-cost');
+    const DeliveryCost = document.getElementById('Delivary-cost');
+    let sum = parseInt(basepriceValue) +  parseInt(StorageCost.innerText) + parseInt(MemoryCost.innerText) + parseInt(DeliveryCost.innerText);
+
+    TotalValue.innerText = sum;
+    GrantTotal.innerText = TotalValue.innerText;
+})
+
 const GrantTotal = document.getElementById('grand-total');
-document.getElementById('memory').addEventListener('click', function (event) { 
-    CostAdd('memory-8gb', 'memory-16gb', 'memory-cost', 200)
-    const StorageCost = document.getElementById('storage-cost').innerText;
-    const MemoryCost = document.getElementById('memory-cost').innerText;
-    const DeliveryCost = document.getElementById('Delivary-cost').innerText;
-    
- function Total() {
-        let sum = parseInt(basepriceValue)  + parseInt(MemoryCost) + parseInt(StorageCost) + parseInt(DeliveryCost);
-        return sum
-    }
-
-    TotalValue.innerText = Total();
-    GrantTotal.innerText = TotalValue.innerText;
-})
-
-document.getElementById('storage').addEventListener('click', function (event) {
-    CostAdd('SSD-256GB','SSD-512GB','storage-cost',300,'SSD-1TB')
-    const StorageCost = document.getElementById('storage-cost').innerText;
-    const MemoryCost = document.getElementById('memory-cost').innerText;
-    const DeliveryCost = document.getElementById('Delivary-cost').innerText;
-    
-
-    function Total() {
-        let sum = parseInt(basepriceValue)  + parseInt(MemoryCost) + parseInt(StorageCost) + parseInt(DeliveryCost);
-        return sum
-    }
-
-    TotalValue.innerText = Total();
-    GrantTotal.innerText = TotalValue.innerText;
-})
-
-document.getElementById('devilary-option').addEventListener('click', function (event) {
-    CostAdd('free-delivary', 'paid-delivary', 'Delivary-cost', 50)
-    const StorageCost = document.getElementById('storage-cost').innerText;
-    const MemoryCost = document.getElementById('memory-cost').innerText;
-    const DeliveryCost = document.getElementById('Delivary-cost').innerText;
-    
-     function Total() {
-        let sum = parseInt(basepriceValue)  + parseInt(MemoryCost) + parseInt(StorageCost) + parseInt(DeliveryCost);
-        return sum
-    }
-
-    TotalValue.innerText = Total();
-    GrantTotal.innerText = TotalValue.innerText;
-})
-
+GrantTotal.innerText = TotalValue.innerText;
 
 // Coupon Code Option
 const PromoField = document.getElementById('promo');
@@ -78,11 +61,9 @@ ApplyPromo.addEventListener('click', function () {
         ApplyPromo.style.display = 'none'
         PromoField.style.display = "none"
         document.getElementById('confirm-msg').style.display ='block'
-
     }
     else {
         PromoField.value = " Check Again";
-    }
-    
+    } 
 })
-    
+
